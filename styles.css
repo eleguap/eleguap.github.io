@@ -1,5 +1,6 @@
 html, body {
     display: block;
+    height: 100%;
     width: 100%;  /* Ensure body spans the full width */
     margin: 0;  /* Remove default margin to ensure full-width display */
     font-family: Arial, sans-serif;
