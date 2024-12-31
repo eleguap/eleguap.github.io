@@ -39,6 +39,8 @@ header {
     background-size: 600% 600%;
     background-attachment: fixed;
     animation: gradientMove 60s ease infinite;
+
+    transition: transform 0.3s ease-in-out; /* Smooth transition for overscroll */
 }
 
 @keyframes text-color-change {
