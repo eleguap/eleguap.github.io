@@ -1,4 +1,4 @@
-body {
+html, body {
     display: block;
     width: 100%;  /* Ensure body spans the full width */
     margin: 0;  /* Remove default margin to ensure full-width display */
@@ -44,6 +44,8 @@ header h1 {
     background-color: #00460d;
     margin-top: 10rem; /* Match the height of the header */
     z-index: 1; /* Ensure it stays above content but below the header */
+
+    overscroll-behavior: none;
 }
 
 main {
