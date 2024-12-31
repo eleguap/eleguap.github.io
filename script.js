@@ -1,4 +1,14 @@
 document.addEventListener('scroll', () => {
+    const header = document.getElementById('header');
+
+    if (window.scrollY <= 0) {
+        // Header scrolls with content at the top (no fixed positioning)
+        header.style.transform = 'translateY(0)';
+    } else {
+        // When scrolled down, maintain fixed positioning with a smooth effect
+        header.style.transform = 'translateY(-100%)';
+    }
+
     const headerHeight = document.querySelector('header').offsetHeight; // Get header height
     const scrollPosition = window.scrollY; // Current scroll position
 

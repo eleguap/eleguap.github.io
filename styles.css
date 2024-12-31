@@ -1,9 +1,11 @@
 /* Adding Overscroll Behavior with Backgrounds */
-html {
+/* html {
     height: 100%;
     background: linear-gradient(90deg, #000000, #00460d, #71ff8b);
+    background-size: 600% 600%;
+    background-attachment: fixed;
     animation: gradientMove 60s ease infinite;
-}
+} */
 
 body {
     margin: 0;
