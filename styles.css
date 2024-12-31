@@ -1,3 +1,10 @@
+/* Adding Overscroll Behavior with Backgrounds */
+html {
+    height: 100%;
+    background: linear-gradient(90deg, #000000, #00460d, #71ff8b);
+    animation: gradientMove 60s ease infinite;
+}
+
 body {
     margin: 0;
     height: 100vh;
@@ -61,18 +68,6 @@ main {
     padding: 10px;
     min-height: 150vh; /* Ensure the content has enough space to scroll */
     z-index: 0; /* Lower than header */
-}
-
-/* Adding Overscroll Behavior with Backgrounds */
-html {
-    height: 100%;
-    background: linear-gradient(to bottom, #333 0%, #333 30%, #1d211e 30%, #1d211e 100%);
-    overscroll-behavior: contain; /* Allow overscroll behavior */
-}
-
-/* Optional: Smooth scroll for better effect */
-html, body {
-    scroll-behavior: smooth;
 }
 
 .timeline-item {
