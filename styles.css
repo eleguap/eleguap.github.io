@@ -4,6 +4,7 @@ body {
     display: block;
     justify-content: center;
     align-items: center;
+    background: #1d211e;
     font-family: Arial, sans-serif;
 }
 
@@ -37,7 +38,8 @@ header {
     100% {color: #71ff8b;}
 }
 
-h1 {
+header h1 {
+    position: relative;
     font-family: Andale Mono, monospace;
     font-size: 4rem;
     color: #00460d;
