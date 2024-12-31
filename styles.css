@@ -39,7 +39,7 @@ header {
 }
 
 header h1 {
-    position: relative;
+    text-align: center;
     font-family: Andale Mono, monospace;
     font-size: 4rem;
     color: #00460d;
@@ -61,6 +61,18 @@ main {
     padding: 10px;
     min-height: 150vh; /* Ensure the content has enough space to scroll */
     z-index: 0; /* Lower than header */
+}
+
+/* Adding Overscroll Behavior with Backgrounds */
+html {
+    height: 100%;
+    background: linear-gradient(to bottom, #333 0%, #333 30%, #1d211e 30%, #1d211e 100%);
+    overscroll-behavior: contain; /* Allow overscroll behavior */
+}
+
+/* Optional: Smooth scroll for better effect */
+html, body {
+    scroll-behavior: smooth;
 }
 
 .timeline-item {
