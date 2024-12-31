@@ -6,7 +6,7 @@ document.addEventListener('scroll', () => {
     const adjustedScrollPosition = Math.max(0, scrollPosition - headerHeight);
 
     // Calculate the total scrollable height (excluding header)
-    const totalContentHeight = document.body.scrollHeight - window.innerHeight - headerHeight;
+    const totalContentHeight = document.body.scrollHeight - window.innerHeight - headerHeight + 160;
 
     // Avoid division by zero if there's no scrollable content
     const scrollPercentage = totalContentHeight > 0
@@ -14,6 +14,6 @@ document.addEventListener('scroll', () => {
       : 0;
 
     // Update the gradient in the sticky bar
-    const stickyBar = document.querySelector('.sticky-bar');
-    stickyBar.style.background = `linear-gradient(to right, #71ff8b ${scrollPercentage}%, #00460d ${scrollPercentage}%)`;
+    const stickyLine = document.querySelector('.sticky-line');
+    stickyLine.style.background = `linear-gradient(to right, #71ff8b ${scrollPercentage}%, #00460d ${scrollPercentage}%)`;
   });
