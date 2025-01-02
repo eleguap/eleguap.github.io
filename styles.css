@@ -1,5 +1,5 @@
 html {
-    animation: backgroundChange 10s ease infinite;
+    animation: backgroundChange 60s ease infinite;
 }
 
 .no-overscroll {
@@ -30,8 +30,7 @@ header h1 {
     position: relative;
     font-family: Andale Mono, monospace;
     font-size: 4rem;
-    color: #00460d;
-    animation: text-color-change 10s ease infinite;
+    animation: text-color-change 60s ease infinite;
 }
 
 .sticky-line {
@@ -43,41 +42,50 @@ header h1 {
     margin: 0; /* Removes the default margin */
     overscroll-behavior: none;
 
-    background-color: #00460d;
+    background-color: #40916C;
     margin-top: 10rem; /* Match the height of the header */
     z-index: 1; /* Ensure it stays above content but below the header */
 }
 
 main {
     position: relative; /* Ensure content scrolls normally */
-    background-color: #1d211e;
-    padding: 50px 10px 5px;
+    background-color: #081C15;
+    padding: 30px 10px 5px;
     margin: 0;
-    min-height: 150vh; /* Ensure the content has enough space to scroll */
+    min-height: 150vh;
+    /* Ensure the content has enough space to scroll */
     z-index: 0;
 }
 
 .item {
     position: relative; /* For positioning pseudo-elements */
-    width: 80%;
+    width: 50%;
     margin: 50px auto; /* Center the box */
     padding: 20px;
 
     /* Transparent background */
     background-color: transparent;
     text-align: center; /* Center text inside */
+    border-top-right-radius: 20px;
+    border-bottom-left-radius: 20px;
+
+    transition: transform 0.3s ease, background-color 2s ease;
 }
 
 .item h3 {
-margin: 0 0 10px;
-font-size: 1.5rem;
-color: #71ff8b;
+    margin: 0 0 10px;
+    font-size: 1.5rem;
+    color: #40916C;
+
+    transition: color 2s ease;
 }
 
 .item p {
-margin: 0;
-font-size: 1rem;
-color: #71ff8b;
+    margin: 0;
+    font-size: 1rem;
+    color: #40916C;
+
+    transition: color 2s ease;
 }
 
 .item::before,
@@ -87,37 +95,36 @@ color: #71ff8b;
     width: 20px; /* Width of the stroke */
     height: 20px; /* Height of the stroke */
     background-color: transparent;
-    border: 2px solid #71ff8b; /* Color of the stroke */
+    border: 2px solid var(--border-color, #40916C); /* Color of the stroke */
+    transition: width 2s ease, height 2s ease, border 2s ease;
 }
 
 .item::before {
-    top: 0;
-    left: 0;
+    top: 0px;
+    left: 0px;
+    width: var(--before-width, 10%);
+    height: var(--before-height, 10%);
     border-right: none; /* Remove right edge */
     border-bottom: none; /* Remove bottom edge */
 }
 
 .item::after {
-    bottom: 0;
-    right: 0;
+    bottom: 0px;
+    right: 0px;
+    width: var(--after-width, 10%);
+    height: var(--after-height, 10%);
     border-left: none; /* Remove left edge */
     border-top: none; /* Remove top edge */
 }
 
 @keyframes backgroundChange {
-    0% { background-color: green;}
-    50% { background-color: black;}
-    100% {background-color: green;}
-}
-
-@keyframes gradientMove {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
+    0% { background-color: #1B4332;}
+    50% { background-color: #74C69D;}
+    100% {background-color: #1B4332;}
 }
 
 @keyframes text-color-change {
-    0% {color: #71ff8b;}
-    50% {color: #00460d;}
-    100% {color: #71ff8b;}
+    0% {color: #74C69D;}
+    50% {color: #1B4332;}
+    100% {color: #74C69D;}
 }
