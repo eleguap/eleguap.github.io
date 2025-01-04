@@ -59,7 +59,7 @@ main {
 
 .item {
     position: relative; /* For positioning pseudo-elements */
-    width: 50%;
+    width: 60%;
     margin: 50px auto; /* Center the box */
     padding: 20px;
 
