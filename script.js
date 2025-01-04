@@ -53,11 +53,13 @@ document.querySelectorAll('.item').forEach(item => {
 
     item.addEventListener('mouseenter', () => {
         // Immediately change dimensions
-        item.style.setProperty('--border-color', '#D8F3DC');
-        changeDimensions();
+        if (document.activeElement !== item) {
+            item.style.setProperty('--border-color', '#D8F3DC');
+            changeDimensions();
 
-        // Start continuously changing dimensions
-        intervalId = setInterval(changeDimensions, 2000); // Adjust interval time as needed
+            // Start continuously changing dimensions
+            intervalId = setInterval(changeDimensions, 2000); // Adjust interval time as needed
+        }
     });
 
     item.addEventListener('mouseleave', () => {
@@ -65,12 +67,15 @@ document.querySelectorAll('.item').forEach(item => {
         clearInterval(intervalId);
 
         // Reset dimensions to default
+
         item.style.setProperty('--before-width', `10%`);
         item.style.setProperty('--before-height', `10%`);
         item.style.setProperty('--after-width', `10%`);
         item.style.setProperty('--after-height', `10%`);
-        item.style.setProperty('--border-color', '#40916C');
 
+        if (document.activeElement !== item) {
+            item.style.setProperty('--border-color', '#40916C');
+        }
     });
 
     item.addEventListener('focus', function() {

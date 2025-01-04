@@ -1,0 +1,42 @@
+html {
+    background: #1B4332;
+}
+
+body {
+    display: block;
+    width: 100%;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    text-align: center;
+    color: #D8F3DC;
+}
+
+h1 {
+    margin-top: 30px;
+}
+
+hr {
+    width: 90%;
+    height: 3px;
+    border: none;
+    background-color: #40916C;
+}
+
+.spacer {
+    height: 1px;
+}
+
+.image-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px; /* Spacing between images */
+    justify-content: center; /* Adjust alignment */
+}
+
+.image-container img {
+    max-width: 100%; /* Ensures images are responsive */
+    height: auto; /* Maintains aspect ratio */
+    object-fit: cover; /* Adjusts image fitting */
+    border: 2px transparent #ccc; /* Optional: Add a border */
+    border-radius: 10px; /* Optional: Rounded corners */
+}
