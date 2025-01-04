@@ -17,20 +17,20 @@ document.addEventListener('scroll', () => {
     const stickyLine = document.querySelector('.sticky-line');
     stickyLine.style.background = `linear-gradient(to right, #D8F3DC ${scrollPercentage}%, #40916C ${scrollPercentage}%)`;
 
-    // Scroll direction detection for overscroll behavior
-    const container = document.querySelector('.container'); // Target your scrollable container
-    const lastScrollTop = container.dataset.lastScrollTop || 0;
+    // // Scroll direction detection for overscroll behavior
+    // const container = document.querySelector('.container'); // Target your scrollable container
+    // const lastScrollTop = container.dataset.lastScrollTop || 0;
 
-    if (scrollPosition > lastScrollTop) {
-        // Scrolling down: disable overscroll
-        container.classList.add('no-overscroll');
-    } else {
-        // Scrolling up: allow overscroll
-        container.classList.remove('no-overscroll');
-    }
+    // if (scrollPosition > lastScrollTop) {
+    //     // Scrolling down: disable overscroll
+    //     container.classList.add('no-overscroll');
+    // } else {
+    //     // Scrolling up: allow overscroll
+    //     container.classList.remove('no-overscroll');
+    // }
 
-    // Update the lastScrollTop value
-    container.dataset.lastScrollTop = scrollPosition;
+    // // Update the lastScrollTop value
+    // container.dataset.lastScrollTop = scrollPosition;
 });
 
 document.querySelectorAll('.item').forEach(item => {
@@ -53,15 +53,8 @@ document.querySelectorAll('.item').forEach(item => {
 
     item.addEventListener('mouseenter', () => {
         // Immediately change dimensions
+        item.style.setProperty('--border-color', '#D8F3DC');
         changeDimensions();
-
-        // Set offsets and color once
-        item.style.transform = 'scale(1.1)';
-        item.style.backgroundColor = '#1B4332';
-        item.style.setProperty('--border-color', '#D8F3DC'); // Set a new border color
-
-        item.querySelector('h3').style.color = '#D8F3DC'; // Change text color of h3
-        item.querySelector('p').style.color = '#D8F3DC';  // Change text color of p
 
         // Start continuously changing dimensions
         intervalId = setInterval(changeDimensions, 2000); // Adjust interval time as needed
@@ -78,10 +71,20 @@ document.querySelectorAll('.item').forEach(item => {
         item.style.setProperty('--after-height', `10%`);
         item.style.setProperty('--border-color', '#40916C');
 
-        item.style.transform = 'scale(1)';
-        item.style.backgroundColor = 'transparent';
+    });
 
-        item.querySelector('h3').style.color = '#40916C'; // Change text color of h3
-        item.querySelector('p').style.color = '#40916C';  // Change text color of p
+    item.addEventListener('focus', function() {
+        // Your custom logic for when an element is focused
+        item.style.setProperty('--border-color', 'transparent');
+    });
+
+    item.addEventListener('blur', function() {
+        // Your custom logic for when an element is focused
+        item.style.setProperty('--border-color', '#40916C');
+    });
+
+    item.addEventListener('click', function() {
+        item.blur();
+        item.style.setProperty('--border-color', '#D8F3DC');
     });
 });

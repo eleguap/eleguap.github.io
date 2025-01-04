@@ -49,43 +49,61 @@ header h1 {
 
 main {
     position: relative; /* Ensure content scrolls normally */
+    display: flex;
+    flex-direction: column; /* Stack buttons vertically */
+    align-items: center; /* Horizontally center buttons */
+
     background-color: #081C15;
-    padding: 30px 10px 5px;
+    padding: 20px 10px 20px;
     margin: 0;
-    min-height: 150vh;
-    /* Ensure the content has enough space to scroll */
+    /* min-height: 150vh; */
     z-index: 0;
 }
 
 .item {
-    position: relative; /* For positioning pseudo-elements */
-    width: 60%;
-    margin: 50px auto; /* Center the box */
-    padding: 20px;
-
-    /* Transparent background */
-    background-color: transparent;
+    margin: 50px auto; /* Center the button */
+    width: 60%; /* Adjust the width */
     text-align: center; /* Center text inside */
+    padding: 20px;
+    background-color: transparent;
+    border: transparent; /* Define border width and transparent color */
     border-top-right-radius: 20px;
     border-bottom-left-radius: 20px;
+    color: #40916C; /* Default text color */
+    cursor: pointer;
+    position: relative; /* For positioning pseudo-elements */
+    transition:
+        background-color 2s ease, /* Apply transition to background-color */
+        transform 0.3s ease; /* Apply transition to transform */
+}
 
-    transition: transform 0.3s ease, background-color 2s ease;
+.item h3, .item p {
+    transition: color 2s ease;
+    color: inherit; /* Use inherited color for text */
 }
 
 .item h3 {
     margin: 0 0 10px;
     font-size: 1.5rem;
-    color: #40916C;
-
-    transition: color 2s ease;
 }
 
 .item p {
     margin: 0;
     font-size: 1rem;
-    color: #40916C;
+}
 
-    transition: color 2s ease;
+.item:hover {
+    background-color: #1B4332; /* Change background color */
+    color: #D8F3DC; /* Change text color */
+    transform: scale(1.1); /* Slightly enlarge the button */
+    border-color: #D8F3DC; /* Change border color */
+}
+
+.item:focus {
+    outline: 2px solid #D8F3DC;  /* Custom outline color */
+    outline-offset: 0px;          /* Space between the button and outline */
+    background-color: #1B4332;    /* Change background color when focused */
+    color: #D8F3DC;                  /* Change text color when focused */
 }
 
 .item::before,
