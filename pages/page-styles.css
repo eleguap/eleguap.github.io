@@ -40,3 +40,55 @@ hr {
     border: 2px transparent #ccc; /* Optional: Add a border */
     border-radius: 10px; /* Optional: Rounded corners */
 }
+
+table {
+    width: 90%; /* Adjust table width */
+    border-collapse: collapse; /* Merge border lines */
+    margin: 20px auto; /* Optional: Add spacing around the table */
+}
+
+th, td {
+    padding: 10px; /* Adjust padding for cells */
+    text-align: left; /* Align text in cells */
+}
+
+th {
+    background-color: #081C15; /* Header background color */
+}
+
+td {
+    background-color: #1B4332; /* Transparent cell background */
+}
+
+tr:nth-child(even) td {
+    background-color: #2D6A4F; /* Alternate row shading */
+}
+
+table tr:hover td {
+    background-color: #081C15; /* Highlight row on hover */
+}
+
+table th, table td {
+    border: 1px transparent rgba(0, 0, 0, 0.2); /* Transparent/customizable borders */
+}
+
+/* Customize column widths */
+colgroup col:nth-child(1) {
+    width: 35%; /* First column width */
+}
+
+colgroup col:nth-child(2) {
+    width: 30%; /* Second column width */
+}
+
+colgroup col:nth-child(3) {
+    width: 15%; /* Third column width */
+}
+
+colgroup col:nth-child(4) {
+    width: 10%; /* Fourth column width */
+}
+
+colgroup col:nth-child(5) {
+    width: 35%; /* Fourth column width */
+}
