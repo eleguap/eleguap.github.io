@@ -8,7 +8,9 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     text-align: center;
+    align-items: center;
     color: #D8F3DC;
+    padding-bottom: 30px;
 }
 
 h1 {
@@ -16,29 +18,15 @@ h1 {
 }
 
 hr {
-    width: 90%;
+    width: 95%;
     height: 3px;
     border: none;
+    border-radius: 5px;
     background-color: #40916C;
 }
 
 .spacer {
     height: 1px;
-}
-
-.image-container {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px; /* Spacing between images */
-    justify-content: center; /* Adjust alignment */
-}
-
-.image-container img {
-    max-width: 100%; /* Ensures images are responsive */
-    height: auto; /* Maintains aspect ratio */
-    object-fit: cover; /* Adjusts image fitting */
-    border: 2px transparent #ccc; /* Optional: Add a border */
-    border-radius: 10px; /* Optional: Rounded corners */
 }
 
 table {
@@ -91,4 +79,71 @@ colgroup col:nth-child(4) {
 
 colgroup col:nth-child(5) {
     width: 35%; /* Fourth column width */
+}
+
+.image-text {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Two equal columns for text and image group */
+    width: 90%; /* Full width of the container */
+    margin: auto;
+    gap: 10%;
+}
+
+.text {
+    display: flex;
+    flex-direction: column; /* Stack text elements vertically */
+    justify-content: center; /* Center text vertically within the column */
+    text-align: center;
+}
+
+.text h2, .text h4{
+    margin: 10px; /* Remove all default margins */
+}
+
+.text p {
+    margin-top: 25px;
+}
+
+.image-group {
+    display: flex;
+    flex-direction: column; /* Stack rows vertically */
+    justify-content: center; /* Center the group vertically */
+    align-items: center; /* Center the group horizontally */
+    gap: 10px; /* Space between rows */
+    width: 95%;
+    margin: auto;
+    max-width: 100%; /* Prevent overflowing */
+    object-fit: cover;
+}
+
+.image-text hr {
+    width: 60%;
+    height: 2px;
+    border: none;
+    margin: 0px auto;
+    border-radius: 5px;
+    background-color: #D8F3DC;
+}
+
+.image-group img {
+    max-width: 100%; /* Ensures images are responsive */
+    height: auto; /* Maintains aspect ratio */
+    border-radius: 10px; /* Optional: Rounded corners */
+}
+
+/* Style for rows */
+.image-group .row {
+    display: flex; /* Arrange columns horizontally within the row */
+    gap: 10px; /* Space between columns */
+    justify-content: space-between; /* Distribute columns evenly across the row */
+}
+
+/* Style for columns */
+.image-group .column {
+    flex: 1; /* Ensure columns have equal width */
+    display: flex; /* Use Flexbox for centering */
+    flex-direction: column; /* Stack images vertically */
+    align-items: center; /* Horizontally center images */
+    justify-content: center; /* Vertically center images */
+    gap: 10px; /* Space between images */
 }
