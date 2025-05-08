@@ -1,148 +1,89 @@
 html {
-    animation: backgroundChange 60s ease infinite;
-}
-
-.no-overscroll {
-    overscroll-behavior: none; /* Disable overscroll effects */
+    padding: 0;
+    margin: 0;
+    background-color: #031911;
 }
 
 body {
-    display: block;
-    width: 100%;
-    font-family: Arial, sans-serif;
+    font-family: monospace;
+    padding: 0;
     margin: 0;
+    background-color: #031911;
 }
 
-header {
-    position: fixed; /* Fix the header at the top */
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 10rem; /* Adjust the height as needed */
-    z-index: 0;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
+header.typewriter {
+    white-space: nowrap;
+    overflow: hidden;
+    display: inline-block;
+    background-color: #031911;
+    font-size: 10vw;
+    color: #74C69D;
+    padding: 1.5% 0 0 4%;
 }
 
-header h1 {
-    position: relative;
-    font-family: Andale Mono, monospace;
-    font-size: 4rem;
-    animation: text-color-change 60s ease infinite;
+@keyframes blink {
+    to {
+        visibility: hidden;
+    }
 }
 
-.sticky-line {
-    position: sticky;
-    top: 0;
-    width: 100%;
-    height: 3px;
-    border: none;
-    margin: 0; /* Removes the default margin */
-    overscroll-behavior: none;
-
-    background-color: #40916C;
-    margin-top: 10rem; /* Match the height of the header */
-    z-index: 1; /* Ensure it stays above content but below the header */
+#cursor {
+    display: inline-block;
+    color: #74C69D;
+    animation: blink 0.7s steps(2, start) infinite;
 }
 
 main {
-    position: relative; /* Ensure content scrolls normally */
+    margin-top: 2%;
+}
+
+button.item {
     display: flex;
-    flex-direction: column; /* Stack buttons vertically */
-    align-items: center; /* Horizontally center buttons */
-
-    background-color: #081C15;
-    padding: 20px 10px 20px;
-    margin: 0;
-    /* min-height: 150vh; */
-    z-index: 0;
-}
-
-.item {
-    margin: 50px auto; /* Center the button */
-    width: 60%; /* Adjust the width */
-    text-align: center; /* Center text inside */
-    padding: 20px;
+    position: relative;
+    justify-content: space-between;
+    align-items: center;
+    width: calc(100% - 6%);
+    box-sizing: border-box;
+    margin: 0 0 4% 3%;
+    padding: 1vw 2vw;
+    font-size: 1vw;
+    color: #40916C;
     background-color: transparent;
-    border: transparent; /* Define border width and transparent color */
-    border-top-right-radius: 20px;
-    border-bottom-left-radius: 20px;
-    color: #40916C; /* Default text color */
+    border: 0;
+    border-radius: 0.5vw 2vw 0.5vw 2vw;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
     cursor: pointer;
-    position: relative; /* For positioning pseudo-elements */
-    transition:
-        background-color 2s ease, /* Apply transition to background-color */
-        transform 0.3s ease; /* Apply transition to transform */
+    transition: all 0.3s ease;
+    z-index: 1;
+    overflow: hidden;
 }
-
-.item h3, .item p {
-    transition: color 2s ease;
-    color: inherit; /* Use inherited color for text */
-}
-
-.item h3 {
-    margin: 0 0 10px;
-    font-size: 1.5rem;
-}
-
-.item p {
-    margin: 0;
-    font-size: 1rem;
-}
-
-.item:hover {
-    background-color: #1B4332; /* Change background color */
-    color: #D8F3DC; /* Change text color */
-    transform: scale(1.1); /* Slightly enlarge the button */
-    border-color: #D8F3DC; /* Change border color */
-}
-
-.item:focus {
-    outline: 2px solid #D8F3DC;  /* Custom outline color */
-    outline-offset: 0px;          /* Space between the button and outline */
-    background-color: #1B4332;    /* Change background color when focused */
-    color: #D8F3DC;                  /* Change text color when focused */
-}
-
-.item::before,
-.item::after {
-    content: '';
+button.item::before {
+    content: "";
     position: absolute;
-    width: 20px; /* Width of the stroke */
-    height: 20px; /* Height of the stroke */
-    background-color: transparent;
-    border: 2px solid var(--border-color, #40916C); /* Color of the stroke */
-    transition: width 2s ease, height 2s ease, border 2s ease;
+    top: 0; left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, #09422D, #031911);
+    transform: translateX(-100%);
+    transition: transform 0.5s ease;
+    z-index: -1;
 }
-
-.item::before {
-    top: 0px;
-    left: 0px;
-    width: var(--before-width, 10%);
-    height: var(--before-height, 10%);
-    border-right: none; /* Remove right edge */
-    border-bottom: none; /* Remove bottom edge */
+button.item:hover::before {
+    transform: translateX(0);
 }
-
-.item::after {
-    bottom: 0px;
-    right: 0px;
-    width: var(--after-width, 10%);
-    height: var(--after-height, 10%);
-    border-left: none; /* Remove left edge */
-    border-top: none; /* Remove top edge */
+button.item:hover {
+    color: #74C69D;
 }
-
-@keyframes backgroundChange {
-    0% { background-color: #1B4332;}
-    50% { background-color: #74C69D;}
-    100% {background-color: #1B4332;}
+button.item h3 {
+    font-size: 1.5vw;
 }
-
-@keyframes text-color-change {
-    0% {color: #74C69D;}
-    50% {color: #1B4332;}
-    100% {color: #74C69D;}
+button.item p {
+    margin: 0;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    transition-delay: 0s;
+}
+button.item:hover p {
+    opacity: 1;
+    transition-delay: 0.3s;
 }
