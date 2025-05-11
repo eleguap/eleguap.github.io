@@ -3,7 +3,7 @@ const textElement = document.getElementById("text");
 const cursor = document.getElementById("cursor");
 
 // Custom delay for each character (in milliseconds)
-const delays = [1500, 200, 200, 100, 500, 1200, 300, 1500]; // includes pause before & after
+const delays = [1500, 200, 200, 100, 500, 1200, 300, 1500];
 let i = 0;
 
 function type() {

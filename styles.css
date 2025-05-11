@@ -5,10 +5,15 @@ html {
 }
 
 body {
-    font-family: monospace;
+    font-family: Menlo, monospace;
     padding: 0;
     margin: 0;
     background-color: #031911;
+}
+
+header {
+    padding: 0;
+    margin: 0;
 }
 
 header.typewriter {
@@ -17,7 +22,7 @@ header.typewriter {
     display: inline-block;
     background-color: #031911;
     font-size: 10vw;
-    color: #74C69D;
+    color: #52B788;
     padding: 1.5% 0 0 4%;
 }
 
@@ -29,11 +34,13 @@ header.typewriter {
 
 #cursor {
     display: inline-block;
-    color: #74C69D;
+    color: #52B788;
     animation: blink 0.7s steps(2, start) infinite;
 }
 
 main {
+    padding: 0;
+    margin: 0;
     margin-top: 2%;
 }
 
@@ -46,6 +53,7 @@ button.item {
     box-sizing: border-box;
     margin: 0 0 4% 3%;
     padding: 1vw 2vw;
+    font-family: Menlo, monospace;
     font-size: 1vw;
     color: #40916C;
     background-color: transparent;
@@ -72,7 +80,7 @@ button.item:hover::before {
     transform: translateX(0);
 }
 button.item:hover {
-    color: #74C69D;
+    color: #52B788;
 }
 button.item h3 {
     font-size: 1.5vw;
