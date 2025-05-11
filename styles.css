@@ -42,9 +42,10 @@ main {
     padding: 0;
     margin: 0;
     margin-top: 2%;
+    min-height: 560px;
 }
 
-button.item {
+main button.item {
     display: flex;
     position: relative;
     justify-content: space-between;
@@ -65,7 +66,7 @@ button.item {
     z-index: 1;
     overflow: hidden;
 }
-button.item::before {
+main button.item::before {
     content: "";
     position: absolute;
     top: 0; left: 0;
@@ -76,22 +77,46 @@ button.item::before {
     transition: transform 0.5s ease;
     z-index: -1;
 }
-button.item:hover::before {
+main button.item:hover::before {
     transform: translateX(0);
 }
-button.item:hover {
+main button.item:hover {
     color: #52B788;
 }
-button.item h3 {
+main button.item h3 {
     font-size: 1.5vw;
 }
-button.item p {
+main button.item p {
     margin: 0;
     opacity: 0;
     transition: opacity 0.3s ease;
     transition-delay: 0s;
 }
-button.item:hover p {
+main button.item:hover p {
     opacity: 1;
     transition-delay: 0.3s;
+}
+
+footer {
+    margin-bottom: 4%;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2vw;
+}
+
+footer button.icon-button {
+    margin: 0;
+    padding: 0;
+    align-items: center;
+    justify-content: center;
+    width: 3.5%;
+    aspect-ratio: 1;
+    cursor: pointer;
+    background: #52B788;
+    color: #031911;
+    font-size: 1.5vw;
+    border: none;
+    border-radius: 1vw;
 }
