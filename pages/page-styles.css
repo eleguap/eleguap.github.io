@@ -84,7 +84,7 @@ main th { /* Header */
 
 main td {
     background-color: #0D6244;
-    font-size: 1.1vw;
+    font-size: 1vw;
 }
 
 main tr:nth-child(even) td {
@@ -97,23 +97,23 @@ main table tr:hover td {
 
 /* Customize column widths */
 main colgroup col:nth-child(1) {
-    width: 33%; /* First column width */
+    width: 26%; /* Regatta */
 }
 
 main colgroup col:nth-child(2) {
-    width: 25%; /* Second column width */
+    width: 21%; /* Host */
 }
 
 main colgroup col:nth-child(3) {
-    width: 17%; /* Third column width */
+    width: 15%; /* Date */
 }
 
 main colgroup col:nth-child(4) {
-    width: 8%; /* Fourth column width */
+    width: 10%; /* Position */
 }
 
 main colgroup col:nth-child(5) {
-    width: 10%; /* Fifth column width */
+    width: 10%; /* Result */
 }
 
 main .image-text {
