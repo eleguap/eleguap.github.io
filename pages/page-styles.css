@@ -33,6 +33,72 @@ header p {
     font-size: 1vw;
 }
 
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes bounceDown {
+  0% {
+    transform: translateY(0vw);
+  }
+  50% {
+    transform: translateY(0.6vw);
+  }
+}
+
+.dropdown {
+    position: fixed;
+    top: -17vw;
+    right: 0%;
+    display: flex;
+    flex-direction: column;
+    z-index: 1000;
+    padding: 0;
+    margin: 0;
+    width: 10vw;
+    height: 21.5vw;
+    background-color: #52B788;
+    color: #05291C;
+    opacity: 0;
+    border-radius: 0 0 0 1vw;
+    font-size: 2vw;
+    user-select: none;
+    text-align: center;
+    transition: all ease 0.6s;
+    animation: fadeIn 2s ease forwards;
+    animation-delay: 0.2s;
+}
+.dropdown .menu {
+    display: flex;
+    flex-direction: column;
+}
+.dropdown .menu a {
+    color: #05291C;
+    padding: 1vw;
+    cursor: pointer;
+}
+.dropdown .arrow {
+    transition: transform ease 0.6s;
+}
+.dropdown .arrow i {
+    padding: 1vw;
+    animation: bounceDown 1.5s ease forwards;
+    animation-delay: 0.7s;
+}
+
+.dropdown:hover {
+    transform: translateY(17vw);
+}
+.dropdown .menu a:hover {
+    background-color: #05291C;
+    color: #52B788;
+}
+.dropdown:hover .arrow {
+  transform: rotate(180deg);
+}
+
 hr {
     width: calc(100% - 8%);
     height: 1px;
@@ -66,9 +132,12 @@ main .spacer {
 
 main table {
     width: calc(100% - 8%);
-    border-collapse: collapse;
+    border-collapse: separate;
+    border-spacing: 0;
     margin: 0 auto;
     color: #031911;
+    border-radius: 0.7vw;
+    overflow: hidden;
 }
 
 main th, main td {
@@ -83,16 +152,17 @@ main th { /* Header */
 }
 
 main td {
-    background-color: #0D6244;
+    background-color: #52B788;
     font-size: 1vw;
 }
 
 main tr:nth-child(even) td {
-    background-color: #0B5239; /* Alternate row */
+    background-color: #40916C; /* Alternate row */
 }
 
 main table tr:hover td {
-    background-color: #52B788;
+    background-color: #05291C;
+    color: #52B788;
 }
 
 /* Customize column widths */
