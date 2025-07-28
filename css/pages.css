@@ -1,0 +1,278 @@
+:root {
+    /* Base Colors */
+    --bg: #0B0F0C;            /* Main background (nearly black with green tint) */
+    --bg-dark: #0D0D0D;       /* Dark background */
+    --surface: #1B2A22;       /* Panels, cards */
+    --border: #2F3D35;        /* Borders/dividers */
+
+    /* Neutrals */
+    --grey: #181818;          /* Medium gray */
+    --grey-dark: #121212;     /* Darker gray for deep contrast */
+
+    /* Text */
+    --text-primary: #E0F2E9;  /* Primary text (off-white) */
+    --text-secondary: #B4C2B7;/* Muted secondary text */
+    --text-disabled: #6F7C72; /* Disabled or low-contrast text */
+
+    /* Accents */
+    --accent: #00C853;        /* Emerald green highlight */
+    --accent-hover: #1DE9B6;  /* Mint green hover state */
+    --accent-glow: #00C85333; /* Soft green glow (with transparency) */
+
+    /* Status Colors (optional) */
+    --success: #00C853;
+    --warning: #FFAB00;
+    --error: #FF5252;
+
+    /* Custom */
+    --dark-green: #031911;
+    --dark-green-glow: #03191133;
+    --font: Gill Sans;
+    --header-height: 10vh;
+    --body-side-padding: 3vw;
+}
+
+html {
+    padding: 0;
+    margin: 0;
+    background-color: var(--bg);
+}
+
+body {
+    padding: 0;
+    margin: 0;
+    font-family: var(--font);
+}
+
+header {
+    padding: 0 var(--body-side-padding);
+    margin: 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: var(--header-height);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: linear-gradient(
+        to right,
+        var(--bg) 0%,
+        var(--bg) 60%,
+        var(--dark-green) 100%
+    );
+    color: var(--text-primary);
+    border-bottom: 0.05vw solid var(--border);
+    z-index: 1000;
+}
+
+header a {
+    color: var(--text-primary);
+    text-decoration: none;
+}
+
+header .header-buttons {
+    display: flex;
+    align-items: center;
+    gap: var(--body-side-padding);
+}
+
+header .header-buttons button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    background: transparent;
+    color: var(--text-primary);
+    width: 6.5vh;
+    aspect-ratio: 1;
+    border-radius: 2vh;
+    border: 1px solid transparent;
+
+    transition:
+        background 0.3s ease,
+        border 0.3s ease,
+        backdrop-filter 0.3s ease,
+        box-shadow 0.3s ease,
+        transform 0.2s ease;
+}
+header .header-buttons button:hover {
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 0 5px rgba(255, 255, 255, 0.3);
+}
+
+main {
+    padding: calc(var(--header-height) + 5vh) var(--body-side-padding);
+    padding-bottom: 5vh;
+    margin: 0;
+    background: linear-gradient(
+        200deg,
+        var(--dark-green) 0%,
+        var(--bg) 30%,
+        var(--bg)
+    );
+    background-attachment: fixed;
+    color: var(--text-primary);
+    font-family: var(--font);
+}
+
+main hr {
+    padding: 0;
+    margin: 2vh 0;
+    width: 100%;
+    height: 1px;
+    border: none;
+    border-radius: 5px;
+    background: var(--border);
+}
+
+main .spacer {
+    height: 2vh;
+}
+
+main .image-text {
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: 100%;
+    gap: var(--body-side-padding);
+}
+
+main .image-text hr {
+    margin: 1vh 0;
+    padding: 0;
+    width: 100%;
+    height: 1px;
+    border: none;
+    border-radius: 5px;
+    background-color: var(--border);
+}
+
+main .image-text .text {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: top;
+    text-align: left;
+}
+
+.image-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* flexible columns */
+    gap: 10px;
+    padding: 10px;
+    max-width: 1200px;   /* limit max width to keep content centered */
+    margin: 0 auto;      /* center the gallery horizontally */
+}
+
+.image-gallery img {
+    width: 100%;     /* fill container width */
+    height: auto;    /* keep aspect ratio */
+    border-radius: 8px;
+    object-fit: cover; /* crop if necessary */
+    display: block;
+}
+
+main .image-group {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: var(--body-side-padding);
+    max-width: 100%;
+    object-fit: cover;
+}
+
+main .image-group img {
+    margin: 0;
+    padding: 0;
+    max-width: 100%;
+    max-height: 200px;
+    border-radius: 1vh;
+}
+
+/* Style for rows */
+main .image-group .row {
+    margin: 0;
+    padding: 0;
+    flex: 1;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 2vw;
+}
+
+/* Style for columns */
+main .image-group .column {
+    margin: 0;
+    padding: 0;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+main table {
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    color: var(--text-primary);
+    border-radius: 1vh;
+    overflow: hidden;
+}
+
+main th, main td {
+    padding: 2vh 1vw;
+    text-align: left; /* Align text in cells */
+}
+
+main th {
+    background-color: var(--bg-dark);
+    color: var(--text-primary);
+    font-weight: normal;
+}
+
+main td {
+    background-color: var(--grey);
+}
+
+main tr:nth-child(even) td {
+    background-color: var(--grey-dark)/* Alternate row */
+}
+
+main table tr:hover td {
+    background-color: var(--dark-green);
+    color: var(--accent-hover);
+}
+
+/* Column widths */
+main table colgroup col:nth-child(1) {
+    width: 30%; /* Regatta */
+}
+
+main table colgroup col:nth-child(2) {
+    width: 25%; /* Host */
+}
+
+main table colgroup col:nth-child(3) {
+    width: 15%; /* Date */
+}
+
+main table colgroup col:nth-child(4) {
+    width: 10%; /* Position */
+}
+
+main table colgroup col:nth-child(5) {
+    width: 10%; /* Result */
+}

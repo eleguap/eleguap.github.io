@@ -3,37 +3,34 @@
 <head>
     <title>Arts and Crafts</title>
     <meta charset="UTF-8" />
-    <link rel="stylesheet" href="page-styles.css" />
     <link rel="icon" href="../img/andy-snoopy.png" type="image/png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="../css/main.css" />
+    <link rel="stylesheet" href="../css/typography.css" />
+    <link rel="stylesheet" href="../css/pages.css" />
 </head>
 <body>
-    <div class="dropdown">
-        <div class="menu">
-            <a href="../index.html" title="Home">
-                <i class="fa-solid fa-home"></i>
-            </a>
-            <a href="https://github.com/eleguap" target="_blank" title="GitHub">
-                <i class="fa-brands fa-github"></i>
-            </a>
-            <a href="https://linkedin.com/in/andyyu132" target="_blank" title="LinkedIn">
-                <i class="fa-brands fa-linkedin"></i>
-            </a>
-            <a href="mailto:andyyu132@gmail.com" title="Email me">
-                <i class="fa-solid fa-envelope"></i>
-            </a>
-        </div>
-        <div class="arrow">
-            <i class="fa-solid fa-chevron-down"></i>
-        </div>
-    </div>
-
     <header>
-        <h1>Arts and Crafts</h1>
-        <p>When I'm feeling cozy.</p>
+        <a href="../index.html" class="header-title">Andy Yu</a>
+        <div class="header-buttons">
+            <button class="icon-button" onclick="window.open('https://www.github.com/eleguap', '_blank');">
+                <i class="fa-brands fa-github" ></i>
+            </button>
+            <button class="icon-button" onclick="window.open('https://www.linkedin.com/in/andyyu132/', '_blank');">
+                <i class="fa-brands fa-linkedin"></i>
+            </button>
+            <button class="icon-button" onclick="window.location.href='mailto:andyyu132@gmail.com';">
+                <i class="fa-solid fa-envelope" ></i>
+            </button>
+        </div>
     </header>
-    <hr style="margin: 1% auto;">
-    <main>
+
+    <main class="fade-item">
+        <h1>Arts and Crafts</h1>
+        <h4>When I'm feeling cozy.</h4>
+
+        <hr>
+
         <div class="image-text">
             <div class="text">
                 <h2>Name Plate</h2>
@@ -46,45 +43,28 @@
             <div class="image-group">
                 <div class="row">
                     <div class="column">
-                        <img src="../img/secretdraft.png" width="100%">
-                    </div>
-                    <div class="column">
                         <img src="../img/secretfinal.png" width="100%">
                     </div>
                 </div>
             </div>
         </div>
-        <hr style="margin: 1% auto;">
+        <hr>
         <div class="image-text">
-            <div class="image-group">
-                <div class="row">
-                    <div class="column">
-                        <img src="../img/flowerbase.png">
-                    </div>
-                    <div class="column">
-                        <img src="../img/wave.png">
-                    </div>
-                    <div class="column">
-                        <img src="../img/flowers.png">
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="column">
-                        <img src="../img/rpmtree.png">
-                    </div>
-                    <div class="column">
-                        <img src="../img/acrylic.jpeg" width="70%">
-                    </div>
-                </div>
-            </div>
             <div class="text">
                 <h2>Acrylic Things</h2>
                 <h4>Inkscape · Onshape · Laser cut · 3D Printed</h4>
                 <hr>
                 <p>Various acrylic pieces made for myself and secret santa.</p>
             </div>
+            <div class="image-group">
+                <div class="row">
+                    <div class="column">
+                        <img src="../img/acrylic.jpeg" width="70%">
+                    </div>
+                </div>
+            </div>
         </div>
-        <hr style="margin: 1% auto;">
+        <hr>
         <div class="image-text">
             <div class="text">
                 <h2>Picture Frame</h2>
@@ -106,38 +86,25 @@
                 </div>
             </div>
         </div>
-        <hr style="margin: 1% auto;">
+        <hr>
         <div class="image-text" style="margin-bottom: 2%;">
+            <div class="text">
+                <h2>Burgee Keychains</h2>
+                <h4>Inkscape · Fusion360 · Laser cut · 3D Printed</h4>
+                <hr>
+                <p>My first pieces.
+                    Key chains of the flags of every sailing team I’ve sailed for.
+                </p>
+            </div>
             <div class="image-group">
                 <div class="row">
-                    <div class="column">
-                        <img src="../img/clarkfleet.png">
-                    </div>
-                    <div class="column">
-                        <img src="../img/antilles.png">
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="column">
-                        <img src="../img/styc.png">
-                    </div>
-                    <div class="column">
-                        <img src="../img/mit.png">
-                    </div>
                     <div class="column">
                         <img src="../img/burgees.jpeg">
                     </div>
                 </div>
             </div>
-            <div class="text">
-                <h2>Burgee Keychains</h2>
-                <h4>Inkscape · Fusion360 · Laser cut · 3D Printed</h4>
-                <hr>
-                <p>My first project.
-                    Key chains of the flags of every sailing team I’ve sailed for.
-                </p>
-            </div>
         </div>
     </main>
+    <script src="../js/script.js"></script>
 </body>
 </html>

@@ -3,45 +3,41 @@
 <head>
     <title>Tactile Sensing</title>
     <meta charset="UTF-8" />
-    <link rel="stylesheet" href="page-styles.css" />
     <link rel="icon" href="../img/andy-snoopy.png" type="image/png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="../css/main.css" />
+    <link rel="stylesheet" href="../css/typography.css" />
+    <link rel="stylesheet" href="../css/pages.css" />
 </head>
 
 <body>
-    <div class="dropdown">
-        <div class="menu">
-            <a href="../index.html" title="Home">
-                <i class="fa-solid fa-home"></i>
-            </a>
-            <a href="https://github.com/eleguap" target="_blank" title="GitHub">
-                <i class="fa-brands fa-github"></i>
-            </a>
-            <a href="https://linkedin.com/in/andyyu132" target="_blank" title="LinkedIn">
-                <i class="fa-brands fa-linkedin"></i>
-            </a>
-            <a href="mailto:andyyu132@gmail.com" title="Email me">
-                <i class="fa-solid fa-envelope"></i>
-            </a>
-        </div>
-        <div class="arrow">
-            <i class="fa-solid fa-chevron-down"></i>
-        </div>
-    </div>
-
     <header>
+        <a href="../index.html" class="header-title">Andy Yu</a>
+        <div class="header-buttons">
+            <button class="icon-button" onclick="window.open('https://www.github.com/eleguap', '_blank');">
+                <i class="fa-brands fa-github" ></i>
+            </button>
+            <button class="icon-button" onclick="window.open('https://www.linkedin.com/in/andyyu132/', '_blank');">
+                <i class="fa-brands fa-linkedin"></i>
+            </button>
+            <button class="icon-button" onclick="window.location.href='mailto:andyyu132@gmail.com';">
+                <i class="fa-solid fa-envelope" ></i>
+            </button>
+        </div>
+    </header>
+
+    <main class="fade-item">
         <h1>Tactile Sensing</h1>
         <h3>Distributed Robotics Laboratory in MIT CSAIL</h3>
-        <h3>Supervisor: Annan Zhang</h3>
-        <h3>PI: Daniela Rus</h3>
-    </header>
-    <hr>
-    <main>
+        <h4>Supervisor: Annan Zhang</h4>
+        <h4>PI: Daniela Rus</h4>
+        <hr>
         <p>
             Fluidically Innervated Lattices Make Versatile and Durable Tactile Sensors.
             Annan Zhang, Miguel Flores-Acton, <strong>Andy Yu</strong>, Anshul Gupta, Maggie Yao, Daniela Rus.
             Accepted at <i>2025 International Symposium on Experimental Robotics (ISER).</i>
         </p>
     </main>
+    <script src="../js/script.js"></script>
 </body>
 </html>

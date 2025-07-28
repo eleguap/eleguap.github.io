@@ -23,25 +23,12 @@
     /* Custom */
     --dark-green: #031911;
     --dark-green-glow: #03191133;
-    --font: Gill Sans;
     --header-height: 10vh;
-    --body-padding: 3vw;
-}
-
-html {
-    padding: 0;
-    margin: 0;
-    background-color: var(--bg);
-}
-
-body {
-    padding: 0;
-    margin: 0;
-    font-family: var(--font);
+    --body-side-padding: 3vw;
 }
 
 header {
-    padding: 0 var(--body-padding);
+    padding: 0 var(--body-side-padding);
     margin: 0;
     position: fixed;
     top: 0;
@@ -58,7 +45,6 @@ header {
         var(--dark-green) 100%
     );
     color: var(--text-primary);
-    font-size: 5vh;
     border-bottom: 0.05vw solid var(--border);
     z-index: 1000;
 }
@@ -66,7 +52,7 @@ header {
 header .header-buttons {
     display: flex;
     align-items: center;
-    gap: var(--body-padding);
+    gap: var(--body-side-padding);
 }
 
 header .header-buttons button {
@@ -76,11 +62,10 @@ header .header-buttons button {
     cursor: pointer;
     background: transparent;
     color: var(--text-primary);
-    width: 6vh;
+    width: 6.5vh;
     aspect-ratio: 1;
     border-radius: 2vh;
     border: 1px solid transparent;
-    font-size: 3vh;
 
     transition:
         background 0.3s ease,
@@ -94,79 +79,19 @@ header .header-buttons button:hover {
     backdrop-filter: blur(8px);
     -webkit-backdrop-filter: blur(8px);
     border: 1px solid rgba(255, 255, 255, 0.2);
-    box-shadow: 0 0 5px rgba(255, 255, 255, 0.3);
-}
-
-main {
-    display: flex;
-    flex-direction: column;
-    padding: calc(var(--header-height) + 5vh) var(--body-padding);
-    margin: 0;
-    gap: 5vh;
-    background: linear-gradient(
-        200deg,
-        var(--dark-green) 0%,
-        var(--bg) 30%,
-        var(--bg)
-    );
-    background-attachment: fixed;
-}
-
-main button {
-    display: flex;
-    cursor: pointer;
-    position: relative;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-    padding: 0 1.5vw;
-    color: var(--text-primary);
-    background: rgba(255, 255, 255, 0.05); /* Glassy base */
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    border-radius: 0.5vh 2vh 0.5vh 2vh;
-    overflow: hidden;
-    opacity: 0;
-    transform: translateY(5vh);
-
-    transition:
-        background 0.3s ease,
-        backdrop-filter 0.3s ease,
-        box-shadow 0.3s ease,
-        box-shadow 0.2s ease,
-        opacity 1s ease,
-        transform 1s ease;
-}
-main button.visible {
-    opacity: 1;
-    transform: translateY(0);
-}
-main button:hover {
-    transition-duration: 0.3s;
-    background: rgba(255, 255, 255, 0.15);
-    box-shadow: 0 0 5px rgba(255, 255, 255, 0.3);
-    backdrop-filter: blur(100px);
-    -webkit-backdrop-filter: blur(100px);
     box-shadow:
-        0 0 5px rgba(255, 255, 255, 0.3),
-        0.5vw 0.5vw 0.3vw var(--dark-green);
-    transform: translate(-0.3vw, -0.3vw);
+      0 0 5px rgba(255, 255, 255, 0.3),
+      0.5vw 0.5vw 0.3vw var(--dark-green);
+
+    transform: scale(1.05);
 }
 
-main button h3 {
-    font-family: var(--font);
-    font-weight: normal;
-    font-size: 3vh;
-    z-index: 1;
+.fade-item {
+  opacity: 0;
+  animation: fadeIn 1.5s forwards;
 }
-
-main button p {
-    margin: 0;
-    opacity: 0;
-    font-family: var(--font);
-    font-size: clamp(0px, calc(0.6vh + 2vw), 2.5vh);
-    color: var(--text-primary);
-    transition: opacity 0.4s ease;
-}
-main button:hover p {
+@keyframes fadeIn {
+  to {
     opacity: 1;
+  }
 }
