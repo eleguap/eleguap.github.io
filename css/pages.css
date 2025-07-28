@@ -194,7 +194,6 @@ main .image-group img {
     margin: 0;
     padding: 0;
     max-width: 100%;
-    max-height: 200px;
     border-radius: 1vh;
 }
 
@@ -207,7 +206,7 @@ main .image-group .row {
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    gap: 2vw;
+    gap: 2vh;
 }
 
 /* Style for columns */
