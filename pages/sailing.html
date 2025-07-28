@@ -3,39 +3,34 @@
 <head>
     <title>Sailing</title>
     <meta charset="UTF-8" />
-    <link rel="stylesheet" href="page-styles.css" />
     <link rel="icon" href="../img/andy-snoopy.png" type="image/png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="../css/main.css" />
+    <link rel="stylesheet" href="../css/typography.css" />
+    <link rel="stylesheet" href="../css/pages.css" />
 </head>
 <body>
-    <div class="dropdown">
-        <div class="menu">
-            <a href="../index.html" title="Home">
-                <i class="fa-solid fa-home"></i>
-            </a>
-            <a href="https://github.com/eleguap" target="_blank" title="GitHub">
-                <i class="fa-brands fa-github"></i>
-            </a>
-            <a href="https://linkedin.com/in/andyyu132" target="_blank" title="LinkedIn">
-                <i class="fa-brands fa-linkedin"></i>
-            </a>
-            <a href="mailto:andyyu132@gmail.com" title="Email me">
-                <i class="fa-solid fa-envelope"></i>
-            </a>
-        </div>
-        <div class="arrow">
-            <i class="fa-solid fa-chevron-down"></i>
-        </div>
-    </div>
-
     <header>
-        <h1>Sailing</h1>
-        <p>Started in second grade.</p>
+        <a href="../index.html" class="header-title">Andy Yu</a>
+        <div class="header-buttons">
+            <button class="icon-button" onclick="window.open('https://www.github.com/eleguap', '_blank');">
+                <i class="fa-brands fa-github" ></i>
+            </button>
+            <button class="icon-button" onclick="window.open('https://www.linkedin.com/in/andyyu132/', '_blank');">
+                <i class="fa-brands fa-linkedin"></i>
+            </button>
+            <button class="icon-button" onclick="window.location.href='mailto:andyyu132@gmail.com';">
+                <i class="fa-solid fa-envelope" ></i>
+            </button>
+        </div>
     </header>
 
-    <hr>
+    <main class="fade-item">
+        <h1>Sailing</h1>
+        <h3>Started in second grade.</h3>
 
-    <main>
+        <hr>
+
         <div class="image-group">
             <div class="row">
                 <div class="column">
@@ -49,30 +44,30 @@
 
         <hr>
 
-        <h2 style="margin: 1.5% 0 0 0;">Coaches</h2>
-        <h3>MIT (420, FJ)</h3>
-        <p>Micheal Kalin ~ Caroline Young</p>
-        <p>Hanna ~ Trevor Long ~ Mike Kanare</p>
+        <h2>Coaches</h2>
+        <h4>MIT (420, FJ)</h4>
+        <p>Micheal Kalin - Caroline Young</p>
+        <p>Hanna - Trevor Long - Mike Kanare</p>
         <div class="spacer"></div>
 
-        <h3>Antilles School (420, FJ)</h3>
-        <p>Tyler Rice ~ Robert Hunter</p>
-        <p>Teddy Nicolosi ~ Sean Seagerblom</p>
+        <h4>Antilles School (420, FJ)</h4>
+        <p>Tyler Rice - Robert Hunter</p>
+        <p>Teddy Nicolosi - Sean Seagerblom</p>
         <div class="spacer"></div>
 
-        <h3>Clarkfleet / C420</h3>
-        <p>Isaac Clark ~ Johnny Norfleet</p>
-        <p>Agustin Resano ~ Rayne Duff</p>
+        <h4>Clarkfleet / C420</h4>
+        <p>Isaac Clark - Johnny Norfleet</p>
+        <p>Agustin Resano - Rayne Duff</p>
         <div class="spacer"></div>
 
-        <h3>St. Thomas Yacht Club (Optimist)</h3>
-        <p>Agustin Resano ~ Greer Scholes</p>
+        <h4>St. Thomas Yacht Club (Optimist)</h4>
+        <p>Agustin Resano - Greer Scholes</p>
         <div class="spacer"></div>
 
         <hr>
 
-        <h2 style="margin: 1.5% 0 0 0;">Results</h2>
-        <h3>MIT</h3>
+        <h2>Results</h2>
+        <h4>MIT</h4>
         <table>
             <!-- Define column widths -->
             <colgroup>
@@ -101,35 +96,35 @@
                     <td>Boston University</td>
                     <td>Oct 26, 2024</td>
                     <td>Skipper</td>
-                    <td>2/18 (A Div)</td>
+                    <td>2/18 (A)</td>
                 </tr>
                 <tr>
                     <td>The George Warren Smith Trophy 24</td>
                     <td>MIT</td>
                     <td>Sep 28, 2024</td>
                     <td>Skipper</td>
-                    <td>3/20 (B Div)</td>
+                    <td>3/20 (B)</td>
                 </tr>
                 <tr>
                     <td>Hood Trophy</td>
                     <td>Tufts</td>
                     <td>Sep 21-22, 2024</td>
                     <td>Skipper</td>
-                    <td>14/20 (A Div)</td>
+                    <td>14/20 (A)</td>
                 </tr>
                 <tr>
                     <td>Boston Dinghy Club Challenge Cup</td>
                     <td>Harvard</td>
                     <td>Apr 20-21, 2024</td>
                     <td>Skipper</td>
-                    <td>10/16 (C Div)</td>
+                    <td>10/16 (C)</td>
                 </tr>
                 <tr>
                     <td>Oberg Trophy</td>
                     <td>Northeastern</td>
                     <td>Apr 13-14, 2024</td>
                     <td>Skipper</td>
-                    <td>2/16 (C Div)</td>
+                    <td>2/16 (C)</td>
                 </tr>
                 <tr>
                     <td>Mystic Lake Team Race</td>
@@ -143,35 +138,35 @@
                     <td>Boston University</td>
                     <td>Mar 30, 2024</td>
                     <td>Skipper</td>
-                    <td>4/11 (A Div)</td>
+                    <td>4/11 (A)</td>
                 </tr>
                 <tr>
                     <td>Nickerson Trophy</td>
                     <td>Tufts</td>
                     <td>Oct 28-29, 2023</td>
                     <td>Skipper</td>
-                    <td>8/17 (B Div)</td>
+                    <td>8/17 (B)</td>
                 </tr>
                 <tr>
                     <td>Oberg Trophy</td>
                     <td>Northeastern</td>
                     <td>Oct 21-22, 2023</td>
                     <td>Skipper</td>
-                    <td>4/17 (B Div)</td>
+                    <td>4/17 (B)</td>
                 </tr>
                 <tr>
                     <td>BU Invite</td>
                     <td>Boston University</td>
                     <td>Sep 30 - Oct 1, 2023</td>
                     <td>Skipper</td>
-                    <td>1/13 (A Div)</td>
+                    <td>1/13 (A)</td>
                 </tr>
                 <tr>
                     <td>Hood Trophy</td>
                     <td>Tufts</td>
                     <td>Sep 23-24, 2023</td>
                     <td>Skipper</td>
-                    <td>6/20 (A Div)</td>
+                    <td>6/20 (A)</td>
                 </tr>
                 <tr>
                     <td>The Harvard Invitational</td>
@@ -184,7 +179,7 @@
         </table>
         <div class="spacer"></div>
 
-        <h3>Antilles School</h3>
+        <h4>Antilles School</h4>
         <table>
             <!-- Define column widths -->
             <colgroup>
@@ -220,7 +215,7 @@
                     <td>John T. Hoggard</td>
                     <td>Apr 29-30, 2023</td>
                     <td>Skipper</td>
-                    <td>7/16 (B Div)</td>
+                    <td>7/16 (B)</td>
                 </tr>
                 <tr>
                     <td>SAISA Baker Team Race Qualifier</td>
@@ -234,35 +229,35 @@
                     <td>John T. Hoggard</td>
                     <td>Mar 18-19, 2023</td>
                     <td>Skipper</td>
-                    <td>1/15 (A Div)</td>
+                    <td>1/15 (A)</td>
                 </tr>
                 <tr>
                     <td>SAISA SP#5 Varsity</td>
                     <td>Ransom Everglades</td>
                     <td>Feb 25, 2023</td>
                     <td>Skipper</td>
-                    <td>2/18 (B Div)</td>
+                    <td>2/18 (B)</td>
                 </tr>
                 <tr>
                     <td>Lawrence A. White Invitational</td>
                     <td>Coast Guard Academy</td>
                     <td>Oct 8-9, 2022</td>
                     <td>Skipper</td>
-                    <td>7/17 (B Div)</td>
+                    <td>7/17 (B)</td>
                 </tr>
                 <tr>
                     <td>SAISA Fleet Racing Championships</td>
                     <td>St. Petersburg</td>
                     <td>Apr 2-3, 2022</td>
                     <td>Skipper</td>
-                    <td>4/15 (B Div)</td>
+                    <td>4/15 (B)</td>
                 </tr>
                 <tr>
                     <td>SAISA South Points SP#5 Varsity</td>
                     <td>Ransom Everglades</td>
                     <td>Feb 26, 2022</td>
                     <td>Skipper</td>
-                    <td>2/18 (B Div)</td>
+                    <td>2/18 (B)</td>
                 </tr>
                 <tr>
                     <td>VI/PR Friendship Regatta</td>
@@ -283,7 +278,7 @@
         </table>
         <div class="spacer"></div>
 
-        <h3>C420s</h3>
+        <h4>C420s</h4>
         <table>
             <!-- Define column widths -->
             <colgroup>
@@ -367,8 +362,8 @@
         </table>
         <div class="spacer"></div>
 
-        <h3>Optimist</h3>
-        <table style="margin-bottom: 2%;">
+        <h4>Optimist</h4>
+        <table>
             <!-- Define column widths -->
             <colgroup>
                 <col style="width: 21%;">
@@ -614,5 +609,6 @@
             </tbody>
         </table>
     </main>
+    <script src="../js/script.js"></script>
 </body>
 </html>

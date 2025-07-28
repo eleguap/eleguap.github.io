@@ -1,0 +1,97 @@
+:root {
+    /* Base Colors */
+    --bg: #0B0F0C;            /* Main background (nearly black with green tint) */
+    --bg-dark: #0D0D0D;            /* Dark background */
+    --surface: #1B2A22;       /* Panels, cards */
+    --border: #2F3D35;        /* Borders/dividers */
+
+    /* Text */
+    --text-primary: #E0F2E9;  /* Primary text (off-white) */
+    --text-secondary: #B4C2B7;/* Muted secondary text */
+    --text-disabled: #6F7C72; /* Disabled or low-contrast text */
+
+    /* Accents */
+    --accent: #00C853;        /* Emerald green highlight */
+    --accent-hover: #1DE9B6;  /* Mint green hover state */
+    --accent-glow: #00C85333; /* Soft green glow (with transparency) */
+
+    /* Status Colors (optional) */
+    --success: #00C853;
+    --warning: #FFAB00;
+    --error: #FF5252;
+
+    /* Custom */
+    --dark-green: #031911;
+    --dark-green-glow: #03191133;
+    --header-height: 10vh;
+    --body-side-padding: 3vw;
+}
+
+header {
+    padding: 0 var(--body-side-padding);
+    margin: 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: var(--header-height);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: linear-gradient(
+        to right,
+        var(--bg) 0%,
+        var(--bg) 60%,
+        var(--dark-green) 100%
+    );
+    color: var(--text-primary);
+    border-bottom: 0.05vw solid var(--border);
+    z-index: 1000;
+}
+
+header .header-buttons {
+    display: flex;
+    align-items: center;
+    gap: var(--body-side-padding);
+}
+
+header .header-buttons button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    background: transparent;
+    color: var(--text-primary);
+    width: 6.5vh;
+    aspect-ratio: 1;
+    border-radius: 2vh;
+    border: 1px solid transparent;
+
+    transition:
+        background 0.3s ease,
+        border 0.3s ease,
+        backdrop-filter 0.3s ease,
+        box-shadow 0.3s ease,
+        transform 0.2s ease;
+}
+header .header-buttons button:hover {
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow:
+      0 0 5px rgba(255, 255, 255, 0.3),
+      0.5vw 0.5vw 0.3vw var(--dark-green);
+
+    transform: scale(1.05);
+}
+
+.fade-item {
+  opacity: 0;
+  animation: fadeIn 1.5s forwards;
+}
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}

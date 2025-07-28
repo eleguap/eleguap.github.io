@@ -1,0 +1,112 @@
+/* ================================
+   Fluid Typography System (Compact)
+   ================================ */
+
+/* 1. Core tuning variables ("knobs") */
+:root {
+  --font-min: 14px;        /* Smallest base font size (mobile) */
+  --font-max: 18px;        /* Largest base font size (desktop) */
+  --scale-ratio: 1.2;      /* Smaller ratio = tighter heading sizes */
+  --line-height: 1.5;
+}
+
+/* 2. Fluid base font size */
+html {
+  font-size: clamp(var(--font-min), 1vw + 1vh, var(--font-max));
+  line-height: var(--line-height);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* 3. Body text */
+body {
+  font-size: 1rem;   /* 14px–18px depending on viewport */
+  line-height: var(--line-height);
+  margin: 0;
+  font-family: Gill Sans;
+  color: #E0F2E9;       /* Adjust for theme */
+}
+
+/* 4. Fluid modular scale (auto-calculated from base) */
+:root {
+  --step--1: calc(1rem / var(--scale-ratio));
+  --step-0:  1rem;
+  --step-1:  calc(var(--step-0) * var(--scale-ratio));
+  --step-2:  calc(var(--step-1) * var(--scale-ratio));
+  --step-3:  calc(var(--step-2) * var(--scale-ratio));
+  --step-4:  calc(var(--step-3) * var(--scale-ratio));
+  --step-5:  calc(var(--step-4) * var(--scale-ratio));
+}
+
+/* 5. Headings */
+header {
+    font-size: clamp(0px, calc(1.5vw + 3vh), 7vh);
+}
+header button {
+    font-size: 3vh;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 0 0 0.4em;
+  font-weight: 600;
+  line-height: 1.2;
+  color: inherit;
+}
+
+main h1 {
+    margin: 0;
+    padding: 0;
+    font-weight: normal;
+    font-size: var(--step-5);
+}
+main h2 {
+    margin: 0;
+    padding: 0;
+    font-weight: normal;
+    font-size: var(--step-4);
+}
+main h3 {
+    margin: 0;
+    padding: 0;
+    font-weight: normal;
+    font-size: var(--step-3);
+}
+main h4 {
+    margin: 0;
+    padding: 0;
+    font-weight: normal;
+    font-size: var(--step-2);
+}
+main h5 {
+    margin: 0;
+    padding: 0;
+    font-weight: normal;
+    font-size: var(--step-1);
+}
+main h6 {
+    margin: 0;
+    padding: 0;
+    font-weight: normal;
+    font-size: var(--step-0);
+}
+
+/* 6. Paragraphs & small text */
+p {
+    margin: 0;
+    padding: 0;
+    font-size: var(--step-0);
+}
+small {
+    margin: 0;
+    padding: 0;
+    font-size: var(--step--1);
+}
+
+/* Tables */
+th {
+    font-size: var(--step-1)
+}
+
+td {
+    font-size: var(--step-0);
+}
