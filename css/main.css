@@ -1,9 +1,13 @@
 :root {
     /* Base Colors */
     --bg: #0B0F0C;            /* Main background (nearly black with green tint) */
-    --bg-dark: #0D0D0D;            /* Dark background */
+    --bg-dark: #0D0D0D;       /* Dark background */
     --surface: #1B2A22;       /* Panels, cards */
     --border: #2F3D35;        /* Borders/dividers */
+
+    /* Neutrals */
+    --grey: #181818;          /* Medium gray */
+    --grey-dark: #121212;     /* Darker gray for deep contrast */
 
     /* Text */
     --text-primary: #E0F2E9;  /* Primary text (off-white) */
