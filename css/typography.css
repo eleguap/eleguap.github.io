@@ -2,7 +2,7 @@
    Fluid Typography System (Compact)
    ================================ */
 
-/* 1. Core tuning variables ("knobs") */
+/* 1. Core tuning variables */
 :root {
   --font-min: 14px;        /* Smallest base font size (mobile) */
   --font-max: 18px;        /* Largest base font size (desktop) */
@@ -23,8 +23,8 @@ body {
   font-size: 1rem;   /* 14px–18px depending on viewport */
   line-height: var(--line-height);
   margin: 0;
-  font-family: Gill Sans;
-  color: #E0F2E9;       /* Adjust for theme */
+  font-family: var(--font);
+  color: var(--text-primary);       /* Adjust for theme */
 }
 
 /* 4. Fluid modular scale (auto-calculated from base) */
@@ -51,6 +51,10 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: 600;
   line-height: 1.2;
   color: inherit;
+}
+
+main button{
+    font-family: var(--font);
 }
 
 main h1 {
