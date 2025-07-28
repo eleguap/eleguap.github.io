@@ -50,6 +50,11 @@ header {
     z-index: 1000;
 }
 
+header a {
+    color: var(--text-primary);
+    text-decoration: none;
+}
+
 header .header-buttons {
     display: flex;
     align-items: center;
@@ -85,6 +90,23 @@ header .header-buttons button:hover {
       0.5vw 0.5vw 0.3vw var(--dark-green);
 
     transform: scale(1.05);
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    padding: calc(var(--header-height) + 5vh) var(--body-side-padding);
+    padding-bottom: 5vh;
+    margin: 0;
+    background: linear-gradient(
+        200deg,
+        var(--dark-green) 0%,
+        var(--bg) 30%,
+        var(--bg)
+    );
+    background-attachment: fixed;
+    color: var(--text-primary);
+    font-family: var(--font);
 }
 
 .fade-item {

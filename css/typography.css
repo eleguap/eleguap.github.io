@@ -24,7 +24,7 @@ body {
   line-height: var(--line-height);
   margin: 0;
   font-family: var(--font);
-  color: var(--text-primary);       /* Adjust for theme */
+  color: var(--text-primary);
 }
 
 /* 4. Fluid modular scale (auto-calculated from base) */
@@ -47,12 +47,14 @@ header button {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  margin: 0 0 0.4em;
-  font-weight: 600;
-  line-height: 1.2;
-  color: inherit;
+    margin: 0;
+    padding: 0;
+    font-weight: 600;
+    line-height: 1.2;
+    color: inherit;
 }
 
+/* Main */
 main button{
     font-family: var(--font);
 }
