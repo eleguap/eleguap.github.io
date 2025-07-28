@@ -23,8 +23,6 @@ main {
         var(--bg)
     );
     background-attachment: fixed;
-
-    min-height: 400vh;
 }
 
 main button {
