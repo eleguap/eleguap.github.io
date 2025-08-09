@@ -34,7 +34,8 @@ main button {
         opacity 1s ease,
         transform 1s ease;
 }
-main button:hover {
+main button:hover,
+main button:focus {
     transition-duration: 0.3s;
     background: rgba(255, 255, 255, 0.15);
     box-shadow: 0 0 5px rgba(255, 255, 255, 0.3);
@@ -44,6 +45,9 @@ main button:hover {
         0 0 5px rgba(255, 255, 255, 0.3),
         0.5vw 0.5vw 0.3vw var(--dark-green);
     transform: translate(-0.3vw, -0.3vw);
+}
+main button:focus {
+    outline: none;
 }
 
 main button small {

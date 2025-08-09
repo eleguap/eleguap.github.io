@@ -84,7 +84,8 @@ header .header-buttons button {
         box-shadow 0.3s ease,
         transform 0.2s ease;
 }
-header .header-buttons button:hover {
+header .header-buttons button:hover,
+header .header-buttons button:focus {
     background: rgba(255, 255, 255, 0.15);
     backdrop-filter: blur(8px);
     -webkit-backdrop-filter: blur(8px);
@@ -94,6 +95,9 @@ header .header-buttons button:hover {
       0.5vw 0.5vw 0.3vw var(--dark-green);
 
     transform: scale(1.05);
+}
+header .header-buttons button:focus {
+    outline: none;
 }
 
 main {
