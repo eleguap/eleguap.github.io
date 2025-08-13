@@ -8,3 +8,9 @@ window.addEventListener('DOMContentLoaded', () => {
     el.classList.add('fade-in');
   });
 });
+
+document.addEventListener("visibilitychange", () => {
+  if (!document.hidden && document.activeElement instanceof HTMLElement) {
+    document.activeElement.blur();
+  }
+});
