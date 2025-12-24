@@ -108,6 +108,26 @@ small {
     font-size: var(--step--1);
 }
 
+
+a {
+    transition: color 0.4s ease;
+}
+a:hover,
+a:focus {
+    color: var(--accent-hover);      /* Highlight on hover/focus */
+}
+
+main a {
+    margin: 0;
+    padding: 0;
+    align-self: center;
+    font-family: var(--font);
+    font-size: var(--step-1);
+    line-height: var(--line-height);
+    color: var(--text-primary);
+    transition: color 0.4s ease;
+}
+
 /* Tables */
 th {
     font-size: var(--step-1)

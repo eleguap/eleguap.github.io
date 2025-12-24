@@ -10,6 +10,19 @@ body {
     font-family: var(--font);
 }
 
+main {
+    min-height: 100vh;
+}
+
+main iframe {
+    width: 75%;
+    height: 800px;
+    align-self: center;
+    border-radius: 10px;
+    border: none;
+    overscroll-behavior: auto;
+}
+
 main hr {
     padding: 0;
     margin: 2vh 0;
@@ -52,7 +65,7 @@ main .image-text .text {
     text-align: left;
 }
 
-.image-container {
+main .image-container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* flexible columns */
     gap: 10px;
@@ -61,7 +74,7 @@ main .image-text .text {
     margin: 0 auto;      /* center the gallery horizontally */
 }
 
-.image-gallery img {
+main .image-gallery img {
     width: 100%;     /* fill container width */
     height: auto;    /* keep aspect ratio */
     border-radius: 8px;
