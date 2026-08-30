@@ -1,25 +1,51 @@
-html {
-    padding: 0;
-    margin: 0;
-    background-color: var(--bg);
+/* ================================
+   Standard content-page layout
+   Wrap page content in <div class="page fade-item"> — see
+   pages/_template/index.html for the copy-paste starting point.
+   ================================ */
+main .page {
+    display: flex;
+    flex-direction: column;
+    max-width: var(--content-max-width);
+    width: 100%;
+    margin: 0 auto;
+    gap: 0.4vh;
 }
 
-body {
-    padding: 0;
+/* Meta line under the page title — e.g. a subtitle, supervisor/PI credit */
+main .page-subtitle {
     margin: 0;
-    font-family: var(--font);
+    color: var(--text-secondary);
+    font-weight: 300;
 }
 
-main {
-    min-height: 100vh;
+/* A heading starting a new subsection (e.g. sailing's team/regatta names)
+   needs more room above it than the page's baseline gap gives — unless an
+   <hr> already sits right before it, since the hr's own margin covers it. */
+main .page > h2,
+main .page > h3:not(.page-subtitle),
+main .page > h4:not(.page-subtitle) {
+    margin-top: 1.6vh;
+}
+main .page > hr + h2,
+main .page > hr + h3,
+main .page > hr + h4 {
+    margin-top: 0;
+}
+
+/* Body copy keeps a readable line length even in a wide page */
+main .page > p,
+main .image-text .text p {
+    max-width: 70ch;
 }
 
 main iframe {
-    width: 75%;
+    width: 100%;
+    max-width: 900px;
     height: 800px;
     align-self: center;
-    border-radius: 10px;
-    border: none;
+    border-radius: var(--glass-radius);
+    border: 1px solid var(--border);
     overscroll-behavior: auto;
 }
 
@@ -29,7 +55,6 @@ main hr {
     width: 100%;
     height: 1px;
     border: none;
-    border-radius: 5px;
     background: var(--border);
 }
 
@@ -37,6 +62,7 @@ main .spacer {
     height: 2vh;
 }
 
+/* Two-column "image beside description" block */
 main .image-text {
     margin: 0;
     padding: 0;
@@ -46,42 +72,27 @@ main .image-text {
     gap: var(--body-side-padding);
 }
 
-main .image-text hr {
-    margin: 1vh 0;
-    padding: 0;
-    width: 100%;
-    height: 1px;
-    border: none;
-    border-radius: 5px;
-    background-color: var(--border);
-}
-
 main .image-text .text {
     margin: 0;
     padding: 0;
     display: flex;
     flex-direction: column;
-    justify-content: top;
+    justify-content: flex-start;
+    gap: 0.6vh;
     text-align: left;
 }
 
-main .image-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* flexible columns */
-    gap: 10px;
-    padding: 10px;
-    max-width: 1200px;   /* limit max width to keep content centered */
-    margin: 0 auto;      /* center the gallery horizontally */
+main .image-text .text hr {
+    margin: 0.6vh 0 1.2vh;
 }
 
-main .image-gallery img {
-    width: 100%;     /* fill container width */
-    height: auto;    /* keep aspect ratio */
-    border-radius: 8px;
-    object-fit: cover; /* crop if necessary */
-    display: block;
+@media (max-width: 700px) {
+    main .image-text {
+        grid-template-columns: 1fr;
+    }
 }
 
+/* Grouped images with row/column layout helpers */
 main .image-group {
     margin: 0;
     padding: 0;
@@ -91,7 +102,6 @@ main .image-group {
     align-items: center;
     gap: var(--body-side-padding);
     max-width: 100%;
-    object-fit: cover;
 }
 
 main .image-group img {
@@ -99,21 +109,21 @@ main .image-group img {
     padding: 0;
     max-width: 100%;
     border-radius: 1vh;
+    border: 1px solid var(--border);
 }
 
-/* Style for rows */
 main .image-group .row {
     margin: 0;
     padding: 0;
     flex: 1;
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
     justify-content: center;
     align-items: center;
     gap: 2vh;
 }
 
-/* Style for columns */
 main .image-group .column {
     margin: 0;
     padding: 0;
@@ -124,6 +134,25 @@ main .image-group .column {
     align-items: center;
 }
 
+/* Grid gallery of images */
+main .image-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 10px;
+    padding: 10px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+main .image-gallery img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    object-fit: cover;
+    display: block;
+}
+
+/* Tables */
 main table {
     padding: 0;
     margin: 0;
@@ -131,19 +160,20 @@ main table {
     border-collapse: separate;
     border-spacing: 0;
     color: var(--text-primary);
-    border-radius: 1vh;
+    border-radius: var(--glass-radius);
     overflow: hidden;
+    border: 1px solid var(--border);
 }
 
 main th, main td {
-    padding: 2vh 1vw;
-    text-align: left; /* Align text in cells */
+    padding: 1.6vh 1vw;
+    text-align: left;
 }
 
 main th {
     background-color: var(--bg-dark);
     color: var(--text-primary);
-    font-weight: normal;
+    font-weight: 500;
 }
 
 main td {
@@ -151,31 +181,10 @@ main td {
 }
 
 main tr:nth-child(even) td {
-    background-color: var(--grey-dark)/* Alternate row */
+    background-color: var(--grey-dark);
 }
 
 main table tr:hover td {
     background-color: var(--dark-green);
     color: var(--accent-hover);
-}
-
-/* Column widths */
-main table colgroup col:nth-child(1) {
-    width: 30%; /* Regatta */
-}
-
-main table colgroup col:nth-child(2) {
-    width: 25%; /* Host */
-}
-
-main table colgroup col:nth-child(3) {
-    width: 15%; /* Date */
-}
-
-main table colgroup col:nth-child(4) {
-    width: 10%; /* Position */
-}
-
-main table colgroup col:nth-child(5) {
-    width: 10%; /* Result */
 }

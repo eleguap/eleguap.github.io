@@ -3,6 +3,7 @@
 <head>
   <title>Andy Yu</title>
   <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <link rel="icon" href="img/andy-snoopy.png" type="image/png">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <link rel="stylesheet" href="css/main.css" />
@@ -11,46 +12,86 @@
 </head>
 
 <body>
-  <header>
-    Andy Yu
-    <div class="header-buttons">
-      <button class="icon-button" onclick="window.open('https://www.github.com/eleguap', '_blank');">
-      <i class="fa-brands fa-github" ></i>
-      </button>
-      <button class="icon-button" onclick="window.open('https://www.linkedin.com/in/andyyu132/', '_blank');">
-        <i class="fa-brands fa-linkedin"></i>
-      </button>
-      <button class="icon-button" onclick="window.location.href='mailto:andyyu132@gmail.com';">
-        <i class="fa-solid fa-envelope" ></i>
-      </button>
-    </div>
-  </header>
+  <script src="js/header.js"></script>
 
   <main>
-    <button class="fade-item" onclick="location.href='pages/fpga1';">
-      <h5>FPGA Optical Flow Sensor</h5>
-      <small>Digital Systems Lab I</small>
-    </button>
-    <button class="fade-item" onclick="window.open('https://rss2025-12.github.io/website', '_blank')">
-      <h5>Autonomous Robot Programming</h5>
-      <small>Robotics Science & Systems</small>
-    </button>
-    <button class="fade-item" onclick="location.href='pages/tactile-sensing';">
-      <h5>Tactile Sensing</h5>
-      <small>Undergraduate Research</small>
-    </button>
-    <button class="fade-item" onclick="window.open('https://maslab-5.github.io', '_blank')">
-      <h5>IAP Robotics Competition</h5>
-      <small>MASLAB 2024</small>
-    </button>
-    <button class="fade-item" onclick="location.href='pages/sailing';">
-      <h5>Sailing</h5>
-      <small>Optimist, 420, FJ</small>
-    </button>
-    <button class="fade-item" onclick="location.href='pages/arts-and-crafts';">
-      <h5>Arts and Crafts</h5>
-      <small>Depression prevention</small>
-    </button>
+    <a class="nav-card glass fade-item" href="pages/fpga1">
+      <span class="nav-card-main">
+        <span class="nav-card-icon"><i class="fa-solid fa-microchip"></i></span>
+        <span class="nav-card-text">
+          <h5>FPGA Optical Flow Sensor</h5>
+          <small>Digital Systems Lab I</small>
+        </span>
+      </span>
+      <span class="nav-card-arrow"><i class="fa-solid fa-arrow-right"></i></span>
+    </a>
+
+    <a class="nav-card glass fade-item" href="https://rss2025-12.github.io/website" target="_blank" rel="noopener">
+      <span class="nav-card-main">
+        <span class="nav-card-icon"><i class="fa-solid fa-robot"></i></span>
+        <span class="nav-card-text">
+          <h5>Autonomous Robot Programming</h5>
+          <small>Robotics Science &amp; Systems</small>
+        </span>
+      </span>
+      <span class="nav-card-arrow"><i class="fa-solid fa-arrow-right"></i></span>
+    </a>
+
+    <a class="nav-card glass fade-item" href="pages/tactile-sensing">
+      <span class="nav-card-main">
+        <span class="nav-card-icon"><i class="fa-solid fa-hand"></i></span>
+        <span class="nav-card-text">
+          <h5>Tactile Sensing</h5>
+          <small>Undergraduate Research</small>
+        </span>
+      </span>
+      <span class="nav-card-arrow"><i class="fa-solid fa-arrow-right"></i></span>
+    </a>
+
+    <a class="nav-card glass fade-item" href="https://maslab-5.github.io" target="_blank" rel="noopener">
+      <span class="nav-card-main">
+        <span class="nav-card-icon"><i class="fa-solid fa-flag-checkered"></i></span>
+        <span class="nav-card-text">
+          <h5>IAP Robotics Competition</h5>
+          <small>MASLAB 2024</small>
+        </span>
+      </span>
+      <span class="nav-card-arrow"><i class="fa-solid fa-arrow-right"></i></span>
+    </a>
+
+    <a class="nav-card glass fade-item" href="pages/sailing">
+      <span class="nav-card-main">
+        <span class="nav-card-icon"><i class="fa-solid fa-sailboat"></i></span>
+        <span class="nav-card-text">
+          <h5>Sailing</h5>
+          <small>Optimist, 420, FJ</small>
+        </span>
+      </span>
+      <span class="nav-card-arrow"><i class="fa-solid fa-arrow-right"></i></span>
+    </a>
+
+    <a class="nav-card glass fade-item" href="pages/arts-and-crafts">
+      <span class="nav-card-main">
+        <span class="nav-card-icon"><i class="fa-solid fa-palette"></i></span>
+        <span class="nav-card-text">
+          <h5>Arts and Crafts</h5>
+          <small>Depression Prevention</small>
+        </span>
+      </span>
+      <span class="nav-card-arrow"><i class="fa-solid fa-arrow-right"></i></span>
+    </a>
+
+    <!-- TODO: update subtitle once pages/ml-accelerators is filled in -->
+    <a class="nav-card glass fade-item" href="pages/ml-accelerators">
+      <span class="nav-card-main">
+        <span class="nav-card-icon"><i class="fa-solid fa-gauge-high"></i></span>
+        <span class="nav-card-text">
+          <h5>Evaluating ML Hardware Accelerators</h5>
+          <small>Course / Lab name</small>
+        </span>
+      </span>
+      <span class="nav-card-arrow"><i class="fa-solid fa-arrow-right"></i></span>
+    </a>
   </main>
 
   <script src="js/script.js"></script>
