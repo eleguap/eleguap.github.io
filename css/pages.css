@@ -33,10 +33,35 @@ main .page > hr + h4 {
     margin-top: 0;
 }
 
-/* Body copy keeps a readable line length even in a wide page */
+/* Body copy runs the full width of the page container; inside the
+   two-column image-text block the column itself sets the measure. */
 main .page > p,
 main .image-text .text p {
-    max-width: 70ch;
+    max-width: 100%;
+}
+
+/* Standalone resource link (repo, report, video). A glass pill rather than
+   an underlined run of text, so the icon and its label read as one object
+   instead of a rule running under the icon and the gap beside it.
+   Pair with .glass: <a class="link-button glass" ...> */
+main .link-button {
+    align-self: center;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.8vw;
+    padding: 1.4vh 2vw;
+    color: var(--text-primary);
+    text-decoration: none;
+    border-radius: 0.6vh 2.4vh 0.6vh 2.4vh;
+}
+
+main .link-button i {
+    color: var(--accent-hover);
+}
+
+main .link-button:hover,
+main .link-button:focus-visible {
+    color: var(--accent-hover);
 }
 
 main iframe {

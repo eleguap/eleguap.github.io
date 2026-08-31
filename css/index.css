@@ -7,9 +7,10 @@ main {
 
 main .nav-card {
     display: flex;
+    gap: 1.5vw;
     cursor: pointer;
     position: relative;
-    justify-content: space-between;
+    justify-content: flex-start;
     align-items: center;
     width: 100%;
     padding: 2.4vh 2vw;
@@ -17,15 +18,6 @@ main .nav-card {
     text-align: left;
     text-decoration: none;
     border-radius: 0.6vh 2.4vh 0.6vh 2.4vh;
-}
-
-/* Icon + title grouped as one unit, so the space the wide layout opens up
-   lands as a single gap before the arrow, not stretched into the title. */
-main .nav-card .nav-card-main {
-    display: flex;
-    align-items: center;
-    gap: 1.5vw;
-    min-width: 0;
 }
 
 main .nav-card .nav-card-icon {
@@ -57,18 +49,4 @@ main .nav-card:hover small,
 main .nav-card:focus-visible small {
     opacity: 1;
     transform: translateX(0);
-}
-
-main .nav-card .nav-card-arrow {
-    flex: none;
-    color: var(--text-disabled);
-    opacity: 0;
-    transform: translateX(-0.5vw);
-    transition: opacity 0.35s ease, transform 0.35s ease, color 0.35s ease;
-}
-main .nav-card:hover .nav-card-arrow,
-main .nav-card:focus-visible .nav-card-arrow {
-    opacity: 1;
-    transform: translateX(0);
-    color: var(--accent-hover);
 }
