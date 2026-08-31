@@ -1,0 +1,77 @@
+<!--
+  TEMPLATE — copy this whole "_template" folder to pages/<new-page-name>,
+  rename the folder, then edit the <title> and the content below.
+  Every content page follows this same shape: header script, then a single
+  <div class="page fade-item"> wrapping a title, an optional subtitle,
+  an <hr>, and whatever content blocks the page needs (see the examples
+  below — delete the ones you don't need). Finally, add a nav card for
+  the new page to /index.html.
+-->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Page Title</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" href="../../img/andy-snoopy.png" type="image/png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="../../css/main.css" />
+    <link rel="stylesheet" href="../../css/typography.css" />
+    <link rel="stylesheet" href="../../css/pages.css" />
+</head>
+<body>
+    <script src="../../js/header.js"></script>
+
+    <main>
+        <div class="page fade-item">
+            <h1>Page Title</h1>
+            <h3 class="page-subtitle">Optional one-line subtitle</h3>
+            <hr>
+
+            <!-- Plain paragraph -->
+            <p>Body copy goes here.</p>
+
+            <!-- Standalone link to a repo, report, doc or video — delete if unused -->
+            <a class="link-button glass" href="https://example.com" target="_blank" rel="noopener">
+                <i class="fa-solid fa-file-lines"></i> Link label
+            </a>
+
+            <!-- Image side-by-side with description — delete if unused -->
+            <div class="image-text">
+                <div class="text">
+                    <h2>Section Title</h2>
+                    <h4>Tools · Used · Here</h4>
+                    <hr>
+                    <p>Short description of this piece of work.</p>
+                </div>
+                <div class="image-group">
+                    <div class="row">
+                        <div class="column">
+                            <img src="../../img/andy-snoopy.png" alt="Description of image">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Table — delete if unused -->
+            <h2>Section Title</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Column A</th>
+                        <th>Column B</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Value</td>
+                        <td>Value</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </main>
+
+    <script src="../../js/script.js"></script>
+</body>
+</html>

@@ -1,37 +1,199 @@
 :root {
     /* Base Colors */
-    --bg: #0B0F0C;            /* Main background (nearly black with green tint) */
-    --bg-dark: #0D0D0D;       /* Dark background */
-    --surface: #1B2A22;       /* Panels, cards */
-    --border: #2F3D35;        /* Borders/dividers */
+    --bg: #0A0F0B;            /* Main background (near-black, green tint) */
+    --bg-dark: #06090A;       /* Deeper background */
+    --surface: #142019;       /* Panels, cards */
+    --border: #2A3A2F;        /* Borders/dividers */
 
     /* Neutrals */
-    --grey: #181818;          /* Medium gray */
-    --grey-dark: #121212;     /* Darker gray for deep contrast */
+    --grey: #171C19;
+    --grey-dark: #101410;
 
     /* Text */
-    --text-primary: #E0F2E9;  /* Primary text (off-white) */
-    --text-secondary: #B4C2B7;/* Muted secondary text */
-    --text-disabled: #6F7C72; /* Disabled or low-contrast text */
+    --text-primary: #E5F3EA;  /* Primary text (off-white, green tint) */
+    --text-secondary: #A9BFAE;/* Muted secondary text */
+    --text-disabled: #64726A; /* Disabled or low-contrast text */
 
     /* Accents */
-    --accent: #00C853;        /* Emerald green highlight */
-    --accent-hover: #1DE9B6;  /* Mint green hover state */
-    --accent-glow: #00C85333; /* Soft green glow (with transparency) */
+    --accent: #22C879;        /* Emerald green highlight */
+    --accent-hover: #4FF2C0;  /* Mint green hover state */
+    --accent-glow: #22c87933; /* Soft green glow (with transparency) */
 
-    /* Status Colors (optional) */
-    --success: #00C853;
+    /* Status Colors */
+    --success: #22C879;
     --warning: #FFAB00;
-    --error: #FF5252;
+    --error: #FF5C5C;
 
-    /* Custom */
-    --dark-green: #031911;
-    --dark-green-glow: #03191133;
+    /* Forest / glass palette */
+    --dark-green: #04150E;
+    --dark-green-glow: #04150e55;
+    --deep-teal: #062018;
+
+    /* Glass component tokens */
+    --glass-bg: rgba(180, 230, 200, 0.06);
+    --glass-bg-hover: rgba(180, 230, 200, 0.12);
+    --glass-border: rgba(200, 240, 215, 0.16);
+    --glass-border-hover: rgba(220, 250, 230, 0.3);
+    --glass-blur: 20px;
+    --glass-radius: 1.4vh;
+
     --header-height: 10vh;
     --body-side-padding: 3vw;
+    --content-max-width: 1800px; /* shared cap for main/.page containers */
     --font: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
 }
 
+* {
+    box-sizing: border-box;
+}
+
+html, body {
+    padding: 0;
+    margin: 0;
+    background-color: var(--bg);
+}
+
+body {
+    min-height: 100vh;
+}
+
+::selection {
+    background: var(--accent-glow);
+    color: var(--text-primary);
+}
+
+/* ================================
+   Ambient forest/glass background
+   ================================ */
+body {
+    position: relative;
+    isolation: isolate;
+}
+
+/* Two independent layers, each with its own drift path and period.
+   Because the periods don't share a common multiple, the blobs never
+   settle into the same relative arrangement -- the composite undulates
+   instead of sliding as one block. Layers are transparent; the base
+   colour comes from the body background underneath. */
+body::before,
+body::after {
+    content: "";
+    position: fixed;
+    /* over-sized so the blur falloff and the drift never expose an edge */
+    inset: -20%;
+    z-index: -1;
+    filter: blur(60px);
+    will-change: transform;
+}
+
+body::before {
+    background:
+        radial-gradient(30vw 30vw at 12% 14%, var(--dark-green-glow) 0%, transparent 60%),
+        radial-gradient(34vw 34vw at 88% 30%, rgba(34, 200, 121, 0.10) 0%, transparent 55%);
+    animation: drift-a 43s ease-in-out infinite alternate;
+}
+
+body::after {
+    background:
+        radial-gradient(38vw 38vw at 32% 88%, rgba(6, 32, 24, 0.9) 0%, transparent 60%),
+        radial-gradient(26vw 26vw at 70% 72%, rgba(34, 200, 121, 0.07) 0%, transparent 60%);
+    animation: drift-b 67s ease-in-out infinite alternate;
+}
+
+/* Three keyframe stops (not just from/to) give the path a curve, so the
+   motion reads as a swell rather than a straight back-and-forth. */
+@keyframes drift-a {
+    0%   { transform: translate3d(0, 0, 0) scale(1) rotate(0deg); }
+    50%  { transform: translate3d(-3%, 2.5%, 0) scale(1.08) rotate(1.5deg); }
+    100% { transform: translate3d(2%, -2%, 0) scale(1.03) rotate(-1deg); }
+}
+
+@keyframes drift-b {
+    0%   { transform: translate3d(0, 0, 0) scale(1.05) rotate(0deg); }
+    50%  { transform: translate3d(3.5%, -3%, 0) scale(1) rotate(-2deg); }
+    100% { transform: translate3d(-2.5%, 3%, 0) scale(1.09) rotate(1deg); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    body::before,
+    body::after { animation: none; }
+}
+
+/* ================================
+   Glass component
+   Shared "frosted glass" surface used by the header buttons,
+   the home nav cards, and any future glass panel.
+   ================================ */
+.glass {
+    position: relative;
+    overflow: hidden;
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    border-radius: var(--glass-radius);
+    backdrop-filter: blur(var(--glass-blur));
+    -webkit-backdrop-filter: blur(var(--glass-blur));
+    transition:
+        background 0.3s ease,
+        border-color 0.3s ease,
+        box-shadow 0.3s ease;
+}
+.glass:hover,
+.glass:focus-visible {
+    background: var(--glass-bg-hover);
+    border-color: var(--glass-border-hover);
+    box-shadow:
+        0 0 0.6vh rgba(200, 250, 220, 0.25),
+        0.4vw 0.4vw 0.6vw var(--dark-green-glow);
+}
+.glass:focus-visible {
+    outline: none;
+}
+
+/* A single band of light sweeping once across the glass on hover.
+   It's a narrow element that travels past the edge and stops — no
+   `forwards`, so it clears itself once the sweep finishes, and no
+   reverse replay when the pointer leaves. */
+.glass::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 60%;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        var(--accent-glow),
+        transparent
+    );
+    opacity: 0;
+    pointer-events: none;
+    transform: translateX(-200%) skewX(-15deg);
+}
+.glass:hover::after,
+.glass:focus-visible::after {
+    animation: glass-shimmer 0.3s ease-out;
+}
+@keyframes glass-shimmer {
+    from {
+        opacity: 1;
+        transform: translateX(-200%) skewX(-15deg);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(260%) skewX(-15deg);
+    }
+}
+@media (prefers-reduced-motion: reduce) {
+    .glass:hover::after,
+    .glass:focus-visible::after {
+        animation: none;
+    }
+}
+
+/* ================================
+   Header
+   ================================ */
 header {
     padding: 0 var(--body-side-padding);
     margin: 0;
@@ -49,8 +211,10 @@ header {
         var(--bg) 60%,
         var(--dark-green) 100%
     );
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
     color: var(--text-primary);
-    border-bottom: 0.05vw solid var(--border);
+    border-bottom: 1px solid var(--border);
     z-index: 1000;
 }
 
@@ -59,10 +223,19 @@ header a {
     text-decoration: none;
 }
 
+header .header-title {
+    transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+header .header-title:hover,
+header .header-title:focus-visible {
+    color: var(--accent-hover);
+    text-shadow: 0 0 1.2vh var(--accent-glow);
+}
+
 header .header-buttons {
     display: flex;
     align-items: center;
-    gap: var(--body-side-padding);
+    gap: calc(var(--body-side-padding) / 2);
 }
 
 header .header-buttons button {
@@ -70,59 +243,40 @@ header .header-buttons button {
     align-items: center;
     justify-content: center;
     cursor: pointer;
-    background: transparent;
     color: var(--text-primary);
     width: 6.5vh;
     aspect-ratio: 1;
-    border-radius: 2vh;
-    border: 1px solid transparent;
-
-    transition:
-        background 0.3s ease,
-        border 0.3s ease,
-        backdrop-filter 0.3s ease,
-        box-shadow 0.3s ease,
-        transform 0.2s ease;
+    border-radius: 1.6vh 0.4vh 1.6vh 0.4vh;
 }
-header .header-buttons button:hover,
-header .header-buttons button:focus {
-    background: rgba(255, 255, 255, 0.15);
-    backdrop-filter: blur(8px);
-    -webkit-backdrop-filter: blur(8px);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    box-shadow:
-      0 0 5px rgba(255, 255, 255, 0.3),
-      0.5vw 0.5vw 0.3vw var(--dark-green);
-
-    transform: scale(1.05);
-}
-header .header-buttons button:focus {
-    outline: none;
-}
-
+/* ================================
+   Main layout
+   ================================ */
 main {
     display: flex;
     flex-direction: column;
-    padding: calc(var(--header-height) + 5vh) var(--body-side-padding);
-    padding-bottom: 5vh;
+    min-height: 100vh;
+    padding: calc(var(--header-height) + 5vh) var(--body-side-padding) 5vh;
     margin: 0;
-    background: linear-gradient(
-        200deg,
-        var(--dark-green) 0%,
-        var(--bg) 30%,
-        var(--bg)
-    );
-    background-attachment: fixed;
     color: var(--text-primary);
     font-family: var(--font);
 }
 
 .fade-item {
-  opacity: 0;
-  animation: fadeIn 1.5s forwards;
+    opacity: 0;
+    animation: fadeIn 0.9s ease forwards;
 }
 @keyframes fadeIn {
-  to {
-    opacity: 1;
-  }
+    from {
+        opacity: 0;
+        transform: translateY(0.8vh);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+@media (prefers-reduced-motion: reduce) {
+    .fade-item {
+        animation-duration: 0.01s;
+    }
 }
